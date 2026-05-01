@@ -34,10 +34,10 @@ for counter in counters:
     labled_shape = cv2.drawContours(image , [approx] , 0 , (0,255,0) , 3)
     x = approx.ravel()[0]
     y = approx.ravel()[1] - 10
-    cv2.putText(image , shape_name , (x,y) , cv2.FONT_HERSHEY_SIMPLEX , 0.5 , (255,0,0) , 2)
+    cv2.putText(labled_shape , shape_name , (x,y) , cv2.FONT_HERSHEY_SIMPLEX , 0.5 , (255,0,0) , 2)
 
-cv2.imwrite('contours_detected.png' , labled_shaped)
+cv2.imwrite('contours_detected.png' , labled_shape)
 
-cv2.imshow('Contours Detected' , image)
+cv2.imshow('Contours Detected' , labled_shape)
 cv2.waitKey(0)
 cv2.destroyAllWindows()
